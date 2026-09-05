@@ -153,7 +153,6 @@
 
         .photo-frame {
             width: 100%;
-            aspect-ratio: 1 / 1;
             border-radius: 2rem;
             overflow: hidden;
             background: #eef2f6;
@@ -162,28 +161,16 @@
             align-items: center;
             justify-content: center;
             transition: box-shadow 0.25s ease;
+            /* 自适应图片比例，不强制正方形 */
+            height: auto;
         }
 
         .photo-frame img {
             width: 100%;
-            height: 100%;
-            object-fit: cover;
+            height: auto;
             display: block;
-        }
-
-        /* fallback placeholder (if image missing) */
-        .photo-frame .placeholder {
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(145deg, #d9e1ec, #e8edf5);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 4rem;
-            font-weight: 400;
-            color: #8a9bb0;
-            letter-spacing: 0.02em;
-            font-family: 'Inter', sans-serif;
+            object-fit: contain; /* 确保完整显示，不裁剪 */
+            border-radius: inherit;
         }
 
         /* ── responsive ── */
@@ -257,7 +244,7 @@
             <div class="tagline">Digital Media Technology · 2026</div>
 
             <div class="research">
-                 Research focus: <span>system / software optimization</span>
+                ⚡ Research focus: <span>system / software optimization</span>
             </div>
 
             <div class="bio">
@@ -278,17 +265,14 @@
                         <polyline points="22,6 12,13 2,6" />
                     </svg>
                 </span>
-                <a href="mailto:guoxin.xie@163.com">x3119001697@163.com</a>
+                <a href="mailto:x3119001697@163.com">x3119001697@163.com</a>
             </div>
         </div>
 
         <!-- RIGHT: photo -->
         <div class="photo-wrapper">
             <div class="photo-frame">
-                <img
-                src="./photo.jpg"
-                alt="Guoxin Xie"
-                />
+                <img src="./photo.jpg" alt="Guoxin Xie" />
             </div>
         </div>
 
